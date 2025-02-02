@@ -1,0 +1,75 @@
+
+body {
+    background: black;
+}
+#pagename{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: pink;
+    margin: 0;
+}
+#secondline{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    color: white;
+    margin: 0;
+}
+.container2{
+    display: flex;
+    align-items:center; 
+    justify-content: space-between; 
+    padding: 10px 5%;
+}
+.newcontainer{
+    display: flex;
+    align-items: left; 
+    justify-content: space-between; 
+    padding: 0px 5%;
+}
+.container2 ul li{
+    display: flex;
+    list-style: none;
+    margin: 0px 0px;
+}
+.container2 ul li a{
+   text-decoration: none;
+   color: white;
+   font-family:'Times New Roman', Times, serif;
+   font-size: 20px;
+   position: relative; 
+}
+.container2 ul li a::after{ 
+    content:''; 
+    width:0;
+    height:3px;
+    background:pink;
+    position: absolute;
+    left: 0px;
+    bottom: -6px;
+    transition: 0.5s;
+}
+.container2 ul li a:hover::after{
+    width: 100%;
+}
+.gallery-container {
+    column-count: 2; 
+    column-gap: 30px; 
+    max-width: 100%;
+    padding: 30px;
+}
+.gallery-item {
+    display: inline-block; 
+    width: 100%; 
+    margin-bottom: 30px; 
+}
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(100%);
+    transition: filter 0.5s ease-in-out;
+    border-radius: 5px;
+}
+.gallery-item img:hover {
+    filter: brightness(100%);
+}
