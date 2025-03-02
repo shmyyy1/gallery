@@ -1,11 +1,10 @@
-
 body {
     background: black;
 }
 #pagename{
     font-family:'Times New Roman', Times, serif;
     font-size: 20px;
-    color: pink;
+    color:pink;
     margin: 0;
 }
 #secondline{
@@ -14,7 +13,7 @@ body {
     color: white;
     margin: 0;
 }
-.container2{
+.container{
     display: flex;
     align-items:center; 
     justify-content: space-between; 
@@ -26,33 +25,33 @@ body {
     justify-content: space-between; 
     padding: 0px 5%;
 }
-.container2 ul li{
+.container ul li{
     display: flex;
     list-style: none;
     margin: 0px 0px;
 }
-.container2 ul li a{
+.container ul li a{
    text-decoration: none;
    color: white;
    font-family:'Times New Roman', Times, serif;
    font-size: 20px;
    position: relative; 
 }
-.container2 ul li a::after{ 
+.container ul li a::after{ 
     content:''; 
     width:0;
     height:3px;
-    background:pink;
+    background:gold;
     position: absolute;
     left: 0px;
     bottom: -6px;
     transition: 0.5s;
 }
-.container2 ul li a:hover::after{
+.container ul li a:hover::after{
     width: 100%;
 }
 .gallery-container {
-    column-count: 2; 
+    column-count: 4; 
     column-gap: 30px; 
     max-width: 100%;
     padding: 30px;
