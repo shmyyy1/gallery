@@ -1,78 +1,84 @@
 body {
     background: black;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 #pagename {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 20px;
+    font-size: 24px;
     color: pink;
     margin: 0;
 }
 
 #secondline {
-    font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     color: white;
     margin: 0;
 }
 
-.container3 {
+/* Nav Container */
+.container {
     display: flex;
-    align-items: center; 
+    align-items: left; 
     justify-content: space-between; 
     padding: 10px 5%;
+    flex-wrap: wrap;
 }
 
 .newcontainer {
     display: flex;
     justify-content: space-between; 
     padding: 0px 5%;
+    flex-wrap: wrap;
 }
 
-.newcontainer {
-    align-items: flex-start;
-}
-
-.container3 ul li {
+.container ul {
     display: flex;
-    list-style: none;
+    flex-wrap: wrap;
+    padding: 0;
     margin: 0;
 }
 
-.container3 ul li a {
+.container ul li {
+    list-style: none;
+    margin: 10px 20px;
+}
+
+.container ul li a {
     text-decoration: none;
     color: white;
-    font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     position: relative;
 }
 
-.container3 ul li a::after {
+.container ul li a::after {
     content: '';
     width: 0;
     height: 3px;
-    background: skyblue;
+    background: gold;
     position: absolute;
     left: 0;
     bottom: -6px;
     transition: 0.5s;
 }
 
-.container3 ul li a:hover::after {
+.container ul li a:hover::after {
     width: 100%;
 }
 
+/* Gallery */
 .gallery-container {
-    column-count: 4; 
-    column-gap: 30px; 
+    column-count: 4;
+    column-gap: 30px;
     max-width: 100%;
     padding: 30px;
 }
 
 .gallery-item {
-    display: inline-block; 
-    width: 100%; 
-    margin-bottom: 30px; 
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 30px;
 }
 
 .gallery-item img {
@@ -88,6 +94,7 @@ body {
     filter: brightness(100%);
 }
 
+/* Responsive Media Queries */
 @media (max-width: 1024px) {
     .gallery-container {
         column-count: 3;
@@ -97,7 +104,7 @@ body {
         font-size: 22px;
     }
 
-    .container3 ul li a {
+    .container ul li a {
         font-size: 18px;
     }
 }
@@ -110,11 +117,11 @@ body {
 
     #pagename,
     #secondline {
-        text-align: center;
+        text-align: left;
         font-size: 20px;
     }
 
-    .container3 {
+    .container {
         flex-direction: column;
         align-items: center;
         padding: 10px;
@@ -125,13 +132,8 @@ body {
         align-items: center;
     }
 
-    .container3 ul {
+    .container ul {
         justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .container3 ul li {
-        margin: 10px;
     }
 }
 
@@ -140,15 +142,16 @@ body {
         column-count: 1;
         column-gap: 20px;
         padding: 15px;
+        align-items: left;
+        text-align: left
     }
-
     #pagename,
     #secondline {
-        text-align: center;
+        text-align: left;
         font-size: 20px;
     }
 
-    .container3 ul li a {
-        font-size: 18px;
+    .container ul li a {
+        font-size: 20px;
     }
 }
