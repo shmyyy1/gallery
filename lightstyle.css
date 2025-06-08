@@ -146,8 +146,10 @@ body {
         align-items: left;
         text-align: left
     }
-    #pagename {
-        font-size: 18px;
+    #pagename,
+    #secondline {
+        text-align: left;
+        font-size: 20px;
     }
 
     .container ul li a {
