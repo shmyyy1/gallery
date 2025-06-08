@@ -77,7 +77,7 @@ body {
     position: absolute;
     left: 0;
     bottom: -6px;
-    transition: 0.5s;
+    transition: 0s;
 }
 
 .container1 ul li a:hover::after {
@@ -87,17 +87,6 @@ body {
 .nav-link.active {
     color: red;
     font-weight: bold;
-}
-
-
-.img1 {
-    background-image: url();
-}
-.img2 {
-    background-image: url();
-}
-.img3 {
-    background-image: url();
 }
 @media (max-width: 768px) {
     #header {
@@ -133,6 +122,7 @@ body {
         font-size: 28px;
         text-align: center;
         align-items: center;
+        padding-top: 10px;
     }
     .container1 {
         flex-direction: column;
