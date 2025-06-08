@@ -1,66 +1,80 @@
 body {
     background: black;
 }
-#pagename{
-    font-family:'Times New Roman', Times, serif;
+
+#pagename {
+    font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     color: pink;
     margin: 0;
 }
-#secondline{
-    font-family:'Times New Roman', Times, serif;
+
+#secondline {
+    font-family: 'Times New Roman', Times, serif;
     font-size: 20px;
     color: white;
     margin: 0;
 }
-.container3{
+
+.container3 {
     display: flex;
-    align-items:center; 
+    align-items: center; 
     justify-content: space-between; 
     padding: 10px 5%;
 }
-.newcontainer{
+
+.newcontainer {
     display: flex;
-    align-items: left; 
     justify-content: space-between; 
     padding: 0px 5%;
 }
-.container3 ul li{
+
+.newcontainer {
+    align-items: flex-start;
+}
+
+.container3 ul li {
     display: flex;
     list-style: none;
-    margin: 0px 0px;
+    margin: 0;
 }
-.container3 ul li a{
-   text-decoration: none;
-   color: white;
-   font-family:'Times New Roman', Times, serif;
-   font-size: 20px;
-   position: relative; 
+
+.container3 ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    position: relative;
 }
-.container3 ul li a::after{ 
-    content:''; 
-    width:0;
-    height:3px;
-    background:skyblue;
+
+.container3 ul li a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: skyblue;
     position: absolute;
-    left: 0px;
+    left: 0;
     bottom: -6px;
     transition: 0.5s;
 }
-.container3 ul li a:hover::after{
+
+.container3 ul li a:hover::after {
     width: 100%;
 }
+
 .gallery-container {
     column-count: 4; 
     column-gap: 30px; 
     max-width: 100%;
     padding: 30px;
 }
+
 .gallery-item {
     display: inline-block; 
     width: 100%; 
     margin-bottom: 30px; 
 }
+
 .gallery-item img {
     width: 100%;
     height: auto;
@@ -69,10 +83,10 @@ body {
     transition: filter 0.5s ease-in-out;
     border-radius: 5px;
 }
+
 .gallery-item img:hover {
     filter: brightness(100%);
 }
-
 
 @media (max-width: 1024px) {
     .gallery-container {
@@ -83,7 +97,7 @@ body {
         font-size: 22px;
     }
 
-    .container ul li a {
+    .container3 ul li a {
         font-size: 18px;
     }
 }
@@ -96,11 +110,11 @@ body {
 
     #pagename,
     #secondline {
-        text-align: left;
+        text-align: center;
         font-size: 20px;
     }
 
-    .container {
+    .container3 {
         flex-direction: column;
         align-items: center;
         padding: 10px;
@@ -111,8 +125,13 @@ body {
         align-items: center;
     }
 
-    .container ul {
+    .container3 ul {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .container3 ul li {
+        margin: 10px;
     }
 }
 
@@ -121,16 +140,15 @@ body {
         column-count: 1;
         column-gap: 20px;
         padding: 15px;
-        align-items: left;
-        text-align: left
     }
+
     #pagename,
     #secondline {
-        text-align: left;
+        text-align: center;
         font-size: 20px;
     }
 
-    .container ul li a {
-        font-size: 20px;
+    .container3 ul li a {
+        font-size: 18px;
     }
 }
