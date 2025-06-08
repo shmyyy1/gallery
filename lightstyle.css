@@ -21,7 +21,7 @@ body {
 /* Nav Container */
 .container {
     display: flex;
-    align-items: center; 
+    align-items: left; 
     justify-content: space-between; 
     padding: 10px 5%;
     flex-wrap: wrap;
