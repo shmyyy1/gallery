@@ -140,10 +140,18 @@ body {
 
 @media (max-width: 480px) {
     .gallery-container {
-        column-count: 1;
+        column-count: initial;
+        column-gap: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         padding: 15px;
     }
 
+    .gallery-item {
+        width: 90%;
+        margin-bottom: 20px;
+    }
     #pagename {
         font-size: 18px;
     }
