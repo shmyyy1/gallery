@@ -191,7 +191,8 @@ body {
 }
 @media (max-width: 480px) {
     #myname {
-        font-size: 22px;
+        font-size: 28px;
+        text-align: centre;
     }
 
     .container1 ul li a {
