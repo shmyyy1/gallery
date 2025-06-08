@@ -70,7 +70,7 @@ body {
 
 /* Gallery */
 .gallery-container {
-    column-count: 4;
+    column-count: 1;
     column-gap: 30px;
     max-width: 100%;
     padding: 30px;
