@@ -193,9 +193,12 @@ body {
     #myname {
         font-size: 28px;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; 
     }
 
     .container1 ul li a {
-        font-size: 22px;
+        font-size: 20px;
     }
 }
