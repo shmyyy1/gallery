@@ -87,9 +87,9 @@ body {
     background-position: center;
 }
 
-#bg1 { background-image: url('https://collection.cloudinary.com/dufudi8va/67dce2e9477e2bfede3708e4cb2a8f04'); }
-#bg2 { background-image: url('https://collection.cloudinary.com/dufudi8va/5a8d42853d1378ff3868c1eb2763a26f'); }
-#bg3 { background-image: url('https://collection.cloudinary.com/dufudi8va/2a4736da2cfb34b00d5b4026396f39b3'); }
+#bg1 { background-image: url('https://res.cloudinary.com/dufudi8va/image/upload/v1744731853/19_wdquip.jpg'); }
+#bg2 { background-image: url('https://res.cloudinary.com/dufudi8va/image/upload/v1744731968/24_xje2z2.jpg'); }
+#bg3 { background-image: url('https://res.cloudinary.com/dufudi8va/image/upload/v1744732030/17_ikuspj.jpg'); }
 #header {
     position: fixed;
     top: 0;
