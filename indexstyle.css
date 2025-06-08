@@ -90,7 +90,6 @@ body {
 #bg1 { background-image: url('https://drive.google.com/uc?export=view&id=1GckJRLwfEH1xng17PjLIn_aQP57E7maC'); }
 #bg2 { background-image: url('colour/24.jpg'); }
 #bg3 { background-image: url('patterns/17.jpg'); }
-
 #header {
     position: fixed;
     top: 0;
@@ -162,4 +161,40 @@ body {
 }
 .img3 {
     background-image: url();
+}
+@media (max-width: 768px) {
+    #header {
+        flex-direction: column;
+        padding: 10px 5%;
+    }
+
+    .container1 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .container1 ul {
+        width: 100%;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .container1 ul li {
+        margin: 10px 15px;
+    }
+
+    #myname {
+        font-size: 28px;
+    }
+}
+@media (max-width: 480px) {
+    #myname {
+        font-size: 22px;
+    }
+
+    .container1 ul li a {
+        font-size: 16px;
+    }
 }
