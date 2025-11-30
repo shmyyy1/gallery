@@ -1,0 +1,160 @@
+/* style.css */
+
+/* IMPORT FONTS: Playfair Display (Serif) for Titles, Inter (Sans) for Text */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+    --bg-color: #F5F5F3; /* Eggshell/Off-white */
+    --text-color: #1A1A1A; /* Charcoal, softer than black */
+    --accent-color: #666666; /* For captions */
+    --spacing-unit: 80px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+/* --- NAVIGATION (Minimalist) --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: transparent; /* Or var(--bg-color) if you want it opaque */
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    margin-left: 30px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- LANDING PAGE (The Lobby) --- */
+.landing-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.split-choice {
+    display: flex;
+    gap: 100px;
+    margin-top: 40px;
+}
+
+.choice-btn {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+}
+
+.choice-btn:hover {
+    border-bottom: 1px solid var(--text-color);
+}
+
+/* --- GALLERY LAYOUT (Editorial Style) --- */
+.gallery-container {
+    max-width: 900px; /* Constrains width for that 'art book' feel */
+    margin: 160px auto 100px auto; /* Top margin accounts for Nav */
+    padding: 0 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.section-header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.section-header p {
+    color: var(--accent-color);
+    font-style: italic;
+}
+
+.art-piece {
+    margin-bottom: 150px; /* Huge whitespace between photos */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.art-piece img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Subtle lift */
+    margin-bottom: 20px;
+}
+
+/* Vertical / Portrait photos shouldn't be too tall */
+.art-piece img.portrait {
+    max-width: 70%; 
+}
+
+.plaque {
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    text-align: center;
+    margin-top: 10px;
+    opacity: 0.8;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .split-choice {
+        flex-direction: column;
+        gap: 40px;
+    }
+    
+    .choice-btn {
+        font-size: 2rem;
+    }
+
+    .art-piece img.portrait {
+        max-width: 100%;
+    }
+}
