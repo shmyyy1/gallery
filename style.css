@@ -15,6 +15,20 @@
     margin: 0;
     padding: 0;
 }
+/* Add to style.css */
+
+.welcome-img {
+    width: 160px;          /* Small and tasteful */
+    height: auto;          /* Maintains aspect ratio */
+    display: block;        /* Allows us to center it */
+    margin: 0 auto 30px;   /* Top: 0, Auto (center), Bottom: 30px spacing */
+    
+    /* Optional: Makes it a circle. Remove this if you want a square/rectangle */
+    /* border-radius: 50%; */ 
+    
+    /* Optional: Adds a very subtle shadow to lift it off the page */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
+}
 
 body {
     background-color: var(--bg-color);
