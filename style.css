@@ -1,12 +1,12 @@
 /* style.css */
 
 /* IMPORT: Inter (Clean, Modern Sans-Serif) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 
 :root {
     --bg-color: #F5F5F3;     /* Eggshell/Off-white */
-    --text-color: #1A1A1A;   /* Charcoal */
-    --accent-color: #757575; /* Muted Grey for details */
+    --text-color: #000000;   /* Pure Black for high contrast (Zara style) */
+    --accent-color: #666666; /* Dark Grey for details */
     --spacing-unit: 80px;
 }
 
@@ -19,58 +19,62 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Inter', sans-serif; /* Applied globally */
-    font-weight: 300; /* Keeps everything light and airy */
+    font-family: 'Inter', sans-serif;
+    font-weight: 300; /* THIN FONT */
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
 /* --- TYPOGRAPHY --- */
 h1, h2, h3 {
-    font-weight: 500; /* Slightly bolder than body text */
-    letter-spacing: -0.5px; /* Tighter tracking for modern feel */
-    color: #000;
+    font-weight: 400; /* Keep headers relatively light too */
+    text-transform: uppercase;
+    letter-spacing: 0.15em; /* WIDER SPACING */
+    font-size: 1.1rem; /* Smaller, understated headers */
 }
 
 a {
     text-decoration: none;
     color: var(--text-color);
-    transition: all 0.2s ease;
+    transition: opacity 0.2s ease;
 }
 
 a:hover {
     opacity: 0.5;
 }
 
-/* --- NAVIGATION --- */
+/* --- NAVIGATION (Zara-style Tabs) --- */
 nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 30px 50px;
+    padding: 30px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: var(--bg-color); /* Opaque background so photos slide under it */
     z-index: 100;
 }
 
 .logo {
-    font-weight: 600;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
+    font-weight: 500;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
 }
 
 .nav-links a {
     margin-left: 30px;
-    font-size: 0.85rem;
+    font-size: 0.75rem; /* Small, elegant text */
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--accent-color);
+    letter-spacing: 0.15em;
+    border-bottom: 1px solid transparent; /* Prepare for hover underline */
+    padding-bottom: 2px;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color); /* The "Tab" feel */
+    opacity: 1;
 }
 
 /* --- LANDING PAGE --- */
@@ -86,90 +90,43 @@ nav {
     width: 140px;
     height: auto;
     display: block;
-    margin: 0 auto 30px;
+    margin: 0 auto 40px; /* Space between image and name */
+    /* No filter, full color */
 }
 
 .split-choice {
     display: flex;
-    gap: 60px;
-    margin-top: 40px;
+    gap: 80px; /* Wide gap between options */
+    margin-top: 50px;
     justify-content: center;
 }
 
-/* The Minimalist Buttons */
 .choice-btn {
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 0.9rem;
+    font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.25em; /* Extra spacing for main buttons */
     border-bottom: 1px solid transparent;
     padding-bottom: 5px;
 }
 
 .choice-btn:hover {
     border-bottom: 1px solid var(--text-color);
-    opacity: 1; /* Keep opacity full on hover for crispness */
+    opacity: 1;
 }
 
-/* --- GALLERY LAYOUT --- */
+/* --- GALLERY LAYOUT (Grid System) --- */
 .gallery-container {
-    max-width: 900px;
+    max-width: 1000px; /* Slightly wider for the grid */
     margin: 160px auto 100px auto;
     padding: 0 20px;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 120px;
+    margin-bottom: 80px;
+    margin-top: 150px; /* distinct separation between sections */
 }
 
-.section-header h1 {
-    font-size: 1.8rem; /* Smaller, understated headers */
-    text-transform: lowercase; /* Optional: 'lowercase' looks very modern/artsy */
-    margin-bottom: 15px;
-}
-
-.section-header p {
-    color: var(--accent-color);
-    font-size: 0.9rem;
-}
-
-.art-piece {
-    margin-bottom: 180px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.art-piece img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 25px;
-}
-
-.art-piece img.portrait {
-    max-width: 60%; 
-}
-
-/* The Minimalist Plaque/Caption */
-.plaque {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.75rem; /* Very small text */
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    color: var(--accent-color);
-    text-align: center;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    nav { padding: 20px; }
-    
-    .split-choice {
-        gap: 30px;
-    }
-    
-    .art-piece img.portrait {
-        max-width: 100%;
-    }
-}
+/* Remove top margin for the very first header */
+.gallery
