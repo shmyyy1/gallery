@@ -87,7 +87,6 @@ nav {
     height: auto;
     display: block;
     margin: 0 auto 30px;
-    filter: grayscale(100%); /* Optional: makes the welcome img B&W for minimalism */
 }
 
 .split-choice {
