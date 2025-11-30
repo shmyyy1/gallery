@@ -1,12 +1,15 @@
 /* style.css */
 
-/* IMPORT: Inter (Clean, Modern Sans-Serif) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+/* IMPORT: 
+   1. Bodoni Moda (The 'Zara' high-contrast Serif) 
+   2. Inter (The clean Sans-Serif for UI) 
+*/
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Inter:wght@300;400;500&display=swap');
 
 :root {
-    --bg-color: #F5F5F3;     /* Eggshell/Off-white */
-    --text-color: #000000;   /* Pure Black for high contrast (Zara style) */
-    --accent-color: #666666; /* Dark Grey for details */
+    --bg-color: #F5F5F3;     /* Eggshell */
+    --text-color: #000000;   /* Pure Black */
+    --accent-color: #666666; /* Dark Grey */
     --spacing-unit: 80px;
 }
 
@@ -19,18 +22,26 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Inter', sans-serif;
-    font-weight: 300; /* THIN FONT */
+    font-family: 'Inter', sans-serif; /* Default to clean sans */
+    font-weight: 300; 
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
 /* --- TYPOGRAPHY --- */
-h1, h2, h3 {
-    font-weight: 400; /* Keep headers relatively light too */
+
+/* The 'Zara' Look for Main Titles */
+h1 {
+    font-family: 'Bodoni Moda', serif; /* The new font */
+    font-weight: 500; 
     text-transform: uppercase;
-    letter-spacing: 0.15em; /* WIDER SPACING */
-    font-size: 1.1rem; /* Smaller, understated headers */
+    letter-spacing: 0.05em; /* Elegant spacing, not too tight */
+    color: #000;
+}
+
+/* Subtitles/Descriptions stay clean sans-serif */
+p {
+    font-family: 'Inter', sans-serif;
 }
 
 a {
@@ -43,7 +54,7 @@ a:hover {
     opacity: 0.5;
 }
 
-/* --- NAVIGATION (Zara-style Tabs) --- */
+/* --- NAVIGATION --- */
 nav {
     position: fixed;
     top: 0;
@@ -52,28 +63,31 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--bg-color); /* Opaque background so photos slide under it */
+    background: var(--bg-color); 
     z-index: 100;
 }
 
+/* Small logo in top left can also use the Zara font if you like */
 .logo {
-    font-weight: 500;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
+    font-family: 'Bodoni Moda', serif; 
+    font-weight: 600;
+    font-size: 1.2rem; /* Slightly larger to see the serif details */
+    letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
 .nav-links a {
     margin-left: 30px;
-    font-size: 0.75rem; /* Small, elegant text */
+    font-family: 'Inter', sans-serif; /* Keep nav links clean */
+    font-size: 0.75rem; 
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    border-bottom: 1px solid transparent; /* Prepare for hover underline */
+    border-bottom: 1px solid transparent;
     padding-bottom: 2px;
 }
 
 .nav-links a:hover, .nav-links a.active {
-    border-bottom: 1px solid var(--text-color); /* The "Tab" feel */
+    border-bottom: 1px solid var(--text-color);
     opacity: 1;
 }
 
@@ -90,22 +104,29 @@ nav {
     width: 140px;
     height: auto;
     display: block;
-    margin: 0 auto 40px; /* Space between image and name */
-    /* No filter, full color */
+    margin: 0 auto 40px; 
+}
+
+/* Specific styling for your Name on the landing page */
+.landing-container h1 {
+    font-size: 2.5rem; /* Large enough to see the thick/thin contrast */
+    margin-bottom: 5px;
+    letter-spacing: 0.02em; /* Tighter than before, feels more like a logo */
 }
 
 .split-choice {
     display: flex;
-    gap: 80px; /* Wide gap between options */
-    margin-top: 50px;
+    gap: 80px; 
+    margin-top: 60px;
     justify-content: center;
 }
 
 .choice-btn {
-    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif; /* Buttons stay clean sans */
+    font-size: 0.8rem;
     font-weight: 300;
     text-transform: uppercase;
-    letter-spacing: 0.25em; /* Extra spacing for main buttons */
+    letter-spacing: 0.25em; 
     border-bottom: 1px solid transparent;
     padding-bottom: 5px;
 }
@@ -115,9 +136,9 @@ nav {
     opacity: 1;
 }
 
-/* --- GALLERY LAYOUT (Grid System) --- */
+/* --- GALLERY LAYOUT --- */
 .gallery-container {
-    max-width: 1000px; /* Slightly wider for the grid */
+    max-width: 1000px;
     margin: 160px auto 100px auto;
     padding: 0 20px;
 }
@@ -125,8 +146,64 @@ nav {
 .section-header {
     text-align: center;
     margin-bottom: 80px;
-    margin-top: 150px; /* distinct separation between sections */
+    margin-top: 150px;
 }
 
-/* Remove top margin for the very first header */
-.gallery
+.gallery-container .section-header:first-child {
+    margin-top: 0;
+}
+
+/* Section Headers (Light, Colour, Pattern) get the Zara font too */
+.section-header h1 {
+    font-size: 2rem; 
+    letter-spacing: 0.05em;
+}
+
+.section-header p {
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    margin-top: 15px;
+    letter-spacing: 0.05em;
+}
+
+/* PHOTO GRID */
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 100px;
+    align-items: start; 
+}
+
+.photo-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.photo-grid img:hover {
+    transform: scale(1.01); 
+}
+
+.grid-caption {
+    margin-top: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.65rem; 
+    color: var(--accent-color);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .photo-grid {
+        grid-template-columns: 1fr; 
+        row-gap: 60px;
+    }
+    
+    .split-choice {
+        gap: 40px;
+        flex-direction: column;
+    }
+}
