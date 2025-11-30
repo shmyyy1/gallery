@@ -1,12 +1,12 @@
 /* style.css */
 
-/* IMPORT FONTS: Playfair Display (Serif) for Titles, Inter (Sans) for Text */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+/* IMPORT: Inter (Clean, Modern Sans-Serif) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
 :root {
-    --bg-color: #F5F5F3; /* Eggshell/Off-white */
-    --text-color: #1A1A1A; /* Charcoal, softer than black */
-    --accent-color: #666666; /* For captions */
+    --bg-color: #F5F5F3;     /* Eggshell/Off-white */
+    --text-color: #1A1A1A;   /* Charcoal */
+    --accent-color: #757575; /* Muted Grey for details */
     --spacing-unit: 80px;
 }
 
@@ -15,46 +15,34 @@
     margin: 0;
     padding: 0;
 }
-/* Add to style.css */
-
-.welcome-img {
-    width: 160px;          /* Small and tasteful */
-    height: auto;          /* Maintains aspect ratio */
-    display: block;        /* Allows us to center it */
-    margin: 0 auto 30px;   /* Top: 0, Auto (center), Bottom: 30px spacing */
-    
-    /* Optional: Makes it a circle. Remove this if you want a square/rectangle */
-    /* border-radius: 50%; */ 
-    
-    /* Optional: Adds a very subtle shadow to lift it off the page */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08); 
-}
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', sans-serif; /* Applied globally */
+    font-weight: 300; /* Keeps everything light and airy */
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
 /* --- TYPOGRAPHY --- */
 h1, h2, h3 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 400;
+    font-weight: 500; /* Slightly bolder than body text */
+    letter-spacing: -0.5px; /* Tighter tracking for modern feel */
+    color: #000;
 }
 
 a {
     text-decoration: none;
     color: var(--text-color);
-    transition: opacity 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 a:hover {
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
-/* --- NAVIGATION (Minimalist) --- */
+/* --- NAVIGATION --- */
 nav {
     position: fixed;
     top: 0;
@@ -64,24 +52,28 @@ nav {
     justify-content: space-between;
     align-items: center;
     z-index: 100;
-    background: transparent; /* Or var(--bg-color) if you want it opaque */
 }
 
 .logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
     font-weight: 600;
+    font-size: 0.9rem;
     letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .nav-links a {
     margin-left: 30px;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: var(--accent-color);
 }
 
-/* --- LANDING PAGE (The Lobby) --- */
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-color);
+}
+
+/* --- LANDING PAGE --- */
 .landing-container {
     height: 100vh;
     display: flex;
@@ -90,48 +82,61 @@ nav {
     text-align: center;
 }
 
-.split-choice {
-    display: flex;
-    gap: 100px;
-    margin-top: 40px;
+.welcome-img {
+    width: 140px;
+    height: auto;
+    display: block;
+    margin: 0 auto 30px;
+    filter: grayscale(100%); /* Optional: makes the welcome img B&W for minimalism */
 }
 
+.split-choice {
+    display: flex;
+    gap: 60px;
+    margin-top: 40px;
+    justify-content: center;
+}
+
+/* The Minimalist Buttons */
 .choice-btn {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-style: italic;
-    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
     border-bottom: 1px solid transparent;
+    padding-bottom: 5px;
 }
 
 .choice-btn:hover {
     border-bottom: 1px solid var(--text-color);
+    opacity: 1; /* Keep opacity full on hover for crispness */
 }
 
-/* --- GALLERY LAYOUT (Editorial Style) --- */
+/* --- GALLERY LAYOUT --- */
 .gallery-container {
-    max-width: 900px; /* Constrains width for that 'art book' feel */
-    margin: 160px auto 100px auto; /* Top margin accounts for Nav */
+    max-width: 900px;
+    margin: 160px auto 100px auto;
     padding: 0 20px;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
 }
 
 .section-header h1 {
-    font-size: 3rem;
-    margin-bottom: 10px;
+    font-size: 1.8rem; /* Smaller, understated headers */
+    text-transform: lowercase; /* Optional: 'lowercase' looks very modern/artsy */
+    margin-bottom: 15px;
 }
 
 .section-header p {
     color: var(--accent-color);
-    font-style: italic;
+    font-size: 0.9rem;
 }
 
 .art-piece {
-    margin-bottom: 150px; /* Huge whitespace between photos */
+    margin-bottom: 180px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,34 +145,31 @@ nav {
 .art-piece img {
     width: 100%;
     height: auto;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05); /* Subtle lift */
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
-/* Vertical / Portrait photos shouldn't be too tall */
 .art-piece img.portrait {
-    max-width: 70%; 
+    max-width: 60%; 
 }
 
+/* The Minimalist Plaque/Caption */
 .plaque {
-    font-size: 0.85rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem; /* Very small text */
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
     color: var(--accent-color);
     text-align: center;
-    margin-top: 10px;
-    opacity: 0.8;
 }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 768px) {
+    nav { padding: 20px; }
+    
     .split-choice {
-        flex-direction: column;
-        gap: 40px;
+        gap: 30px;
     }
     
-    .choice-btn {
-        font-size: 2rem;
-    }
-
     .art-piece img.portrait {
         max-width: 100%;
     }
