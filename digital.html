@@ -54,3 +54,28 @@
             <div class="photo-grid">
                 <div><img src="https://via.placeholder.com/1200x800/E0E0E0/808080?text=Pattern+1"><div class="grid-caption">Windows</div></div>
                 <div><img src="https://via.placeholder.com/800x1200/E0E0E0/808080?text=Pattern+2"><div class="grid-caption">
+    
+    <script>
+        function filterGallery(category, btnElement) {
+            // 1. Find all sections and hide them
+            const sections = document.querySelectorAll('.gallery-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // 2. Find all buttons and turn off the 'active' underline
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // 3. Show the specific section we clicked (e.g., 'colour')
+            const selectedSection = document.getElementById(category);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            } else {
+                console.error("Could not find section with ID:", category);
+            }
+
+            // 4. Turn on the underline for the button we just clicked
+            btnElement.classList.add('active');
+        }
+    </script>
+</body>
+</html>
