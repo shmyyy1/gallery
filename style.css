@@ -53,3 +53,58 @@ a:hover {
 /* --- NAVIGATION --- */
 nav {
     position: fixed;
+
+/* --- SUB-NAVIGATION (THE TABS) --- */
+.sub-nav-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Space between tabs */
+    margin-top: 100px; /* Space from top nav */
+    margin-bottom: 60px; /* Space before photos start */
+}
+
+.filter-btn {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    color: var(--accent-color);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 5px;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    color: var(--text-color);
+}
+
+.filter-btn.active {
+    color: var(--text-color);
+    border-bottom: 1px solid var(--text-color);
+}
+
+/* --- HIDING/SHOWING LOGIC --- */
+.gallery-section {
+    display: none; /* Hidden by default */
+    animation: fadeIn 0.6s ease; /* Smooth fade when switching */
+}
+
+.gallery-section.active {
+    display: block; /* Show only when active */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* On mobile, reduce gap between tabs */
+@media (max-width: 768px) {
+    .sub-nav-container {
+        gap: 25px;
+    }
+    .filter-btn {
+        font-size: 0.7rem;
+    }
+}
