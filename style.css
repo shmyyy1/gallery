@@ -2,10 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600&family=Inter:wght@300;400;500&display=swap');
 
 :root {
-    --bg-color: #F5F5F3;     /* Eggshell/Off-white */
-    --text-color: #000000;   /* Pure Black */
-    --accent-color: #666666; /* Dark Grey */
-    --spacing-unit: 80px;
+    --bg-color: #F5F5F3;     
+    --text-color: #000000;   
+    --accent-color: #666666; 
 }
 
 * {
@@ -22,7 +21,7 @@ body {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     
-    /* FORCE EVERYTHING LOWERCASE GLOBALLY */
+    /* GLOBAL LOWERCASE (Exceptions handled below) */
     text-transform: lowercase; 
 }
 
@@ -30,15 +29,16 @@ body {
 h1 {
     font-family: 'Inter', sans-serif;
     font-weight: 400; 
-    text-transform: lowercase; /* Explicitly lowercase */
-    letter-spacing: 0.05em; /* Reduced spacing slightly for lowercase legibility */
+    text-transform: lowercase; 
+    letter-spacing: 0.05em; 
     color: #000;
-    font-size: 1.5rem; 
+    font-size: 1.8rem; /* Bigger */
 }
 
 p {
     font-family: 'Inter', sans-serif;
     text-transform: lowercase;
+    font-size: 1rem; /* Bigger (was 0.8rem) */
 }
 
 a {
@@ -68,15 +68,17 @@ nav {
 .logo {
     font-family: 'Bodoni Moda', serif; 
     font-weight: 600;
-    font-size: 1.2rem; 
+    font-size: 1.4rem; /* Bigger */
     letter-spacing: 0.05em;
-    text-transform: lowercase; /* Lowercase Logo */
+    
+    /* EXCEPTION: LOGO IS UPPERCASE */
+    text-transform: uppercase; 
 }
 
 .nav-links a {
     margin-left: 30px;
     font-family: 'Inter', sans-serif; 
-    font-size: 0.8rem; /* Slightly larger for lowercase legibility */
+    font-size: 0.9rem; /* Bigger */
     text-transform: lowercase;
     letter-spacing: 0.1em;
     border-bottom: 1px solid transparent;
@@ -97,11 +99,11 @@ nav {
     text-align: center;
 }
 
-/* The Frame around the content */
+/* REMOVED BORDER HERE */
 .landing-content {
-    border: 1px solid #000;
-    padding: 60px 80px;    
-    max-width: 600px;       
+    border: none; /* Gone */
+    padding: 0;   
+    max-width: 800px;       
     margin: 0 20px;         
 }
 
@@ -109,33 +111,35 @@ nav {
 .landing-container h1 {
     font-family: 'Bodoni Moda', serif; 
     font-weight: 500; 
-    font-size: 3.5rem; 
-    margin-bottom: 10px;
+    font-size: 4rem; /* Very Big */
+    margin-bottom: 15px;
     letter-spacing: 0.02em; 
     line-height: 1.1;
-    text-transform: lowercase; /* "shamanth sreekanth" */
+    
+    /* EXCEPTION: NAME IS UPPERCASE */
+    text-transform: uppercase; 
 }
 
 .welcome-img {
-    width: 140px !important;
+    width: 150px !important; /* Slightly bigger welcome image */
     height: auto !important;
     display: block !important;
-    margin: 0 auto 40px !important; 
+    margin: 0 auto 50px !important; 
 }
 
 .split-choice {
     display: flex;
-    gap: 80px; 
-    margin-top: 50px;
+    gap: 100px; /* Wider gap */
+    margin-top: 60px;
     justify-content: center;
 }
 
 .choice-btn {
     font-family: 'Inter', sans-serif; 
-    font-size: 0.9rem; /* Bumped up slightly */
+    font-size: 1.1rem; /* Bigger */
     font-weight: 300;
     text-transform: lowercase;
-    letter-spacing: 0.15em; 
+    letter-spacing: 0.2em; 
     border-bottom: 1px solid transparent;
     padding-bottom: 5px;
 }
@@ -149,14 +153,14 @@ nav {
 .sub-nav-container {
     display: flex;
     justify-content: center;
-    gap: 50px; 
+    gap: 60px; 
     margin-top: 100px; 
-    margin-bottom: 60px; 
+    margin-bottom: 80px; 
 }
 
 .filter-btn {
     font-family: 'Inter', sans-serif;
-    font-size: 0.85rem;
+    font-size: 1rem; /* Bigger */
     text-transform: lowercase;
     letter-spacing: 0.1em;
     cursor: pointer;
@@ -177,7 +181,7 @@ nav {
 
 /* --- GALLERY LOGIC --- */
 .gallery-container {
-    max-width: 1000px;
+    max-width: 1100px; /* Wider container for bigger photos */
     margin: 160px auto 100px auto;
     padding: 0 20px;
 }
@@ -198,26 +202,26 @@ nav {
 
 .section-header {
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 100px;
 }
 
 .section-header p {
     color: var(--accent-color);
-    font-size: 0.85rem;
-    margin-top: 15px;
+    font-size: 1rem; /* Bigger */
+    margin-top: 20px;
     letter-spacing: 0.05em;
-    text-transform: lowercase; /* Forces description lowercase */
+    text-transform: lowercase; 
 }
 
-/* --- THE MASONRY LAYOUT --- */
+/* --- MASONRY LAYOUT --- */
 .photo-grid {
     column-count: 2;
-    column-gap: 40px; 
+    column-gap: 50px; 
 }
 
 .photo-grid > div {
     break-inside: avoid;
-    margin-bottom: 60px; 
+    margin-bottom: 80px; /* More breathing room */
 }
 
 .photo-grid img {
@@ -232,27 +236,23 @@ nav {
 }
 
 .grid-caption {
-    margin-top: 12px;
+    margin-top: 15px;
     font-family: 'Inter', sans-serif;
-    font-size: 0.7rem; 
+    font-size: 0.85rem; /* Bigger */
     color: var(--accent-color);
     letter-spacing: 0.05em;
-    text-transform: lowercase; /* Lowercase Captions */
+    text-transform: lowercase; 
 }
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .landing-container h1 { font-size: 2.2rem; }
+    .landing-container h1 { font-size: 2.5rem; }
     
-    .landing-content {
-        padding: 40px 20px;
-    }
-
     .photo-grid { 
         column-count: 1;
     }
     
-    .split-choice { gap: 40px; flex-direction: column; }
-    .sub-nav-container { gap: 25px; }
-    .filter-btn { font-size: 0.8rem; }
+    .split-choice { gap: 50px; flex-direction: column; }
+    .sub-nav-container { gap: 30px; }
+    .filter-btn { font-size: 0.9rem; }
 }
