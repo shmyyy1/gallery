@@ -18,57 +18,59 @@
 
     <div class="gallery-container">
         
-        <div class="section-header">
-            <h1>Lomography 100</h1>
-            <p>Fine grain. Daylight.</p>
+        <div class="sub-nav-container">
+            <div class="filter-btn active" onclick="filterGallery('lomo', this)">Lomography 100</div>
+            <div class="filter-btn" onclick="filterGallery('gold', this)">Kodak Gold 200</div>
+            <div class="filter-btn" onclick="filterGallery('hp5', this)">Ilford HP5</div>
         </div>
 
-        <div class="photo-grid">
-            <div>
-                <img src="https://via.placeholder.com/800x1200/D3D3D3/666666?text=Lomo+1" alt="Lomo 1">
-                <div class="grid-caption">Place Caption Here</div>
+        <div id="lomo" class="gallery-section active">
+            <div class="section-header">
+                <h1>Lomography 100</h1>
+                <p>Fine Grain. Daylight.</p>
             </div>
-            <div>
-                <img src="https://via.placeholder.com/1200x800/D3D3D3/666666?text=Lomo+2" alt="Lomo 2">
-                <div class="grid-caption">Place Caption Here</div>
-            </div>
-            </div>
-
-
-        <div class="section-header">
-            <h1>Kodak Gold 200</h1>
-            <p>Warm tones. Nostalgia.</p>
+            <div class="photo-grid">
+                <div><img src="https://via.placeholder.com/800x1200/D3D3D3?text=Lomo+1"><div class="grid-caption">Caption</div></div>
+                <div><img src="https://via.placeholder.com/1200x800/D3D3D3?text=Lomo+2"><div class="grid-caption">Caption</div></div>
+                </div>
         </div>
 
-        <div class="photo-grid">
-            <div>
-                <img src="https://via.placeholder.com/1200x800/D3D3D3/666666?text=Gold+1" alt="Gold 1">
-                <div class="grid-caption">Place Caption Here</div>
+        <div id="gold" class="gallery-section">
+            <div class="section-header">
+                <h1>Kodak Gold 200</h1>
+                <p>Warm Tones. Nostalgia.</p>
             </div>
-            <div>
-                <img src="https://via.placeholder.com/800x1200/D3D3D3/666666?text=Gold+2" alt="Gold 2">
-                <div class="grid-caption">Place Caption Here</div>
-            </div>
-            </div>
-
-
-        <div class="section-header">
-            <h1>Ilford HP5</h1>
-            <p>Monochrome. Contrast.</p>
+            <div class="photo-grid">
+                <div><img src="https://via.placeholder.com/1200x800/D3D3D3?text=Gold+1"><div class="grid-caption">Caption</div></div>
+                <div><img src="https://via.placeholder.com/800x1200/D3D3D3?text=Gold+2"><div class="grid-caption">Caption</div></div>
+                 </div>
         </div>
 
-        <div class="photo-grid">
-            <div>
-                <img src="https://via.placeholder.com/800x1200/D3D3D3/666666?text=HP5+1" alt="HP5 1">
-                <div class="grid-caption">Place Caption Here</div>
+        <div id="hp5" class="gallery-section">
+            <div class="section-header">
+                <h1>Ilford HP5</h1>
+                <p>Monochrome. Contrast.</p>
             </div>
-            <div>
-                <img src="https://via.placeholder.com/1200x800/D3D3D3/666666?text=HP5+2" alt="HP5 2">
-                <div class="grid-caption">Place Caption Here</div>
-            </div>
-            </div>
+            <div class="photo-grid">
+                <div><img src="https://via.placeholder.com/800x1200/D3D3D3?text=HP5+1"><div class="grid-caption">Caption</div></div>
+                <div><img src="https://via.placeholder.com/1200x800/D3D3D3?text=HP5+2"><div class="grid-caption">Caption</div></div>
+                 </div>
+        </div>
 
     </div>
+
+    <script>
+        function filterGallery(category, btnElement) {
+            const sections = document.querySelectorAll('.gallery-section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(category).classList.add('active');
+            btnElement.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
