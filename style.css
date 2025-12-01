@@ -1,5 +1,4 @@
 /* IMPORT: Bodoni Moda (Zara Header) + Inter (Clean Body) */
-/* I have simplified this URL to prevent syntax errors */
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600&family=Inter:wght@300;400;500&display=swap');
 
 :root {
@@ -93,7 +92,7 @@ nav {
     text-align: center;
 }
 
-/* NEW: The Frame around the content */
+/* The Frame around the content */
 .landing-content {
     border: 1px solid #000; /* THE BLACK BORDER */
     padding: 60px 80px;     /* Space inside the border */
@@ -203,13 +202,19 @@ nav {
     letter-spacing: 0.05em;
 }
 
-/* THE GRID */
+/* --- THE MASONRY LAYOUT (Replaces the old Grid) --- */
 .photo-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 40px;
-    row-gap: 100px;
-    align-items: start; 
+    /* Use CSS columns to pack items tightly */
+    column-count: 2;
+    column-gap: 40px; /* Space between columns */
+}
+
+/* Target the container for each photo/caption pair */
+.photo-grid > div {
+    /* Prevent a photo block from being split across two columns */
+    break-inside: avoid;
+    /* Add vertical space between items within a column */
+    margin-bottom: 60px; /* Tighter gap for a better look */
 }
 
 .photo-grid img {
@@ -238,10 +243,13 @@ nav {
     
     .landing-content {
         padding: 40px 20px;
-        /* Kept border on mobile, but reduced padding */
     }
 
-    .photo-grid { grid-template-columns: 1fr; row-gap: 60px; }
+    /* Switch to 1 column on mobile */
+    .photo-grid { 
+        column-count: 1;
+    }
+    
     .split-choice { gap: 40px; flex-direction: column; }
     .sub-nav-container { gap: 25px; }
     .filter-btn { font-size: 0.7rem; }
