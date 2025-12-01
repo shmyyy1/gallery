@@ -18,57 +18,66 @@
 
     <div class="gallery-container">
         
-        <div class="section-header">
-            <h1>Light</h1>
-            <p>Shadows. Rays. Exposure.</p>
+        <div class="sub-nav-container">
+            <div class="filter-btn active" onclick="filterGallery('light', this)">Light</div>
+            <div class="filter-btn" onclick="filterGallery('colour', this)">Colour</div>
+            <div class="filter-btn" onclick="filterGallery('pattern', this)">Pattern</div>
         </div>
 
-        <div class="photo-grid">
-            <div>
-                <img src="https://via.placeholder.com/1200x800/E0E0E0/808080?text=Light+1" alt="Light 1">
-                <div class="grid-caption">Caption 1</div>
+        <div id="light" class="gallery-section active">
+            <div class="section-header">
+                <h1>Light</h1>
+                <p>Shadows. Rays. Exposure.</p>
             </div>
-            <div>
-                <img src="https://via.placeholder.com/800x1200/E0E0E0/808080?text=Light+2" alt="Light 2">
-                <div class="grid-caption">Caption 2</div>
+            <div class="photo-grid">
+                <div><img src="https://via.placeholder.com/1200x800/E0E0E0?text=Light+1"><div class="grid-caption">Caption</div></div>
+                <div><img src="https://via.placeholder.com/800x1200/E0E0E0?text=Light+2"><div class="grid-caption">Caption</div></div>
+                <div><img src="https://via.placeholder.com/1200x800/E0E0E0?text=Light+3"><div class="grid-caption">Caption</div></div>
+                <div><img src="https://via.placeholder.com/800x1200/E0E0E0?text=Light+4"><div class="grid-caption">Caption</div></div>
             </div>
-            </div>
-
-
-        <div class="section-header">
-            <h1>Colour</h1>
-            <p>Saturation. Hues. Vibration.</p>
         </div>
 
-        <div class="photo-grid">
-            <div>
-                <img src="https://via.placeholder.com/800x1200/E0E0E0/808080?text=Colour+1" alt="Colour 1">
-                <div class="grid-caption">Caption 1</div>
+        <div id="colour" class="gallery-section">
+            <div class="section-header">
+                <h1>Colour</h1>
+                <p>Vibrant Hues.</p>
             </div>
-            <div>
-                <img src="https://via.placeholder.com/1200x800/E0E0E0/808080?text=Colour+2" alt="Colour 2">
-                <div class="grid-caption">Caption 2</div>
+            <div class="photo-grid">
+                <div><img src="https://via.placeholder.com/800x1200/E0E0E0?text=Colour+1"><div class="grid-caption">Caption</div></div>
+                <div><img src="https://via.placeholder.com/1200x800/E0E0E0?text=Colour+2"><div class="grid-caption">Caption</div></div>
             </div>
-            </div>
-
-
-        <div class="section-header">
-            <h1>Pattern</h1>
-            <p>Repetition. Geometry. Form.</p>
         </div>
 
-        <div class="photo-grid">
-            <div>
-                <img src="https://via.placeholder.com/1200x800/E0E0E0/808080?text=Pattern+1" alt="Pattern 1">
-                <div class="grid-caption">Caption 1</div>
+        <div id="pattern" class="gallery-section">
+            <div class="section-header">
+                <h1>Pattern</h1>
+                <p>Geometry & Form.</p>
             </div>
-            <div>
-                <img src="https://via.placeholder.com/800x1200/E0E0E0/808080?text=Pattern+2" alt="Pattern 2">
-                <div class="grid-caption">Caption 2</div>
+            <div class="photo-grid">
+                <div><img src="https://via.placeholder.com/1200x800/E0E0E0?text=Pattern+1"><div class="grid-caption">Caption</div></div>
+                <div><img src="https://via.placeholder.com/800x1200/E0E0E0?text=Pattern+2"><div class="grid-caption">Caption</div></div>
             </div>
-            </div>
+        </div>
 
     </div>
+
+    <script>
+        function filterGallery(category, btnElement) {
+            // 1. Hide all gallery sections
+            const sections = document.querySelectorAll('.gallery-section');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // 2. Remove 'active' underline from all buttons
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // 3. Show the selected section
+            document.getElementById(category).classList.add('active');
+
+            // 4. Add 'active' underline to the clicked button
+            btnElement.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
