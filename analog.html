@@ -30,9 +30,9 @@
                 <p>Fine Grain. Daylight.</p>
             </div>
             <div class="photo-grid">
-                <div><img src="https://via.placeholder.com/800x1200/D3D3D3?text=Lomo+1"><div class="grid-caption">Caption</div></div>
-                <div><img src="https://via.placeholder.com/1200x800/D3D3D3?text=Lomo+2"><div class="grid-caption">Caption</div></div>
-                </div>
+                <div><img src="https://via.placeholder.com/800x1200/D3D3D3/666666?text=Lomo+1"><div class="grid-caption">Summer</div></div>
+                <div><img src="https://via.placeholder.com/1200x800/D3D3D3/666666?text=Lomo+2"><div class="grid-caption">Beach</div></div>
+            </div>
         </div>
 
         <div id="gold" class="gallery-section">
@@ -41,9 +41,9 @@
                 <p>Warm Tones. Nostalgia.</p>
             </div>
             <div class="photo-grid">
-                <div><img src="https://via.placeholder.com/1200x800/D3D3D3?text=Gold+1"><div class="grid-caption">Caption</div></div>
-                <div><img src="https://via.placeholder.com/800x1200/D3D3D3?text=Gold+2"><div class="grid-caption">Caption</div></div>
-                 </div>
+                <div><img src="https://via.placeholder.com/1200x800/D3D3D3/666666?text=Gold+1"><div class="grid-caption">Sunset</div></div>
+                <div><img src="https://via.placeholder.com/800x1200/D3D3D3/666666?text=Gold+2"><div class="grid-caption">Friends</div></div>
+            </div>
         </div>
 
         <div id="hp5" class="gallery-section">
@@ -52,22 +52,30 @@
                 <p>Monochrome. Contrast.</p>
             </div>
             <div class="photo-grid">
-                <div><img src="https://via.placeholder.com/800x1200/D3D3D3?text=HP5+1"><div class="grid-caption">Caption</div></div>
-                <div><img src="https://via.placeholder.com/1200x800/D3D3D3?text=HP5+2"><div class="grid-caption">Caption</div></div>
-                 </div>
+                <div><img src="https://via.placeholder.com/800x1200/D3D3D3/666666?text=HP5+1"><div class="grid-caption">Shadows</div></div>
+                <div><img src="https://via.placeholder.com/1200x800/D3D3D3/666666?text=HP5+2"><div class="grid-caption">Street</div></div>
+            </div>
         </div>
 
     </div>
 
     <script>
         function filterGallery(category, btnElement) {
+            // Hide all sections
             const sections = document.querySelectorAll('.gallery-section');
             sections.forEach(section => section.classList.remove('active'));
-            
+
+            // Deactivate all buttons
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
 
-            document.getElementById(category).classList.add('active');
+            // Show selected section
+            const selectedSection = document.getElementById(category);
+            if (selectedSection) {
+                selectedSection.classList.add('active');
+            }
+
+            // Activate clicked button
             btnElement.classList.add('active');
         }
     </script>
