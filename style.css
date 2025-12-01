@@ -17,30 +17,35 @@
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    font-family: 'Inter', sans-serif; /* GLOBAL FONT: Clean Sans */
+    font-family: 'Inter', sans-serif;
     font-weight: 300; 
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    
+    /* FORCE EVERYTHING LOWERCASE GLOBALLY */
+    text-transform: lowercase; 
 }
 
 /* --- TYPOGRAPHY --- */
 h1 {
-    font-family: 'Inter', sans-serif; /* Default Headers are Clean */
+    font-family: 'Inter', sans-serif;
     font-weight: 400; 
-    text-transform: uppercase;
-    letter-spacing: 0.15em; 
+    text-transform: lowercase; /* Explicitly lowercase */
+    letter-spacing: 0.05em; /* Reduced spacing slightly for lowercase legibility */
     color: #000;
     font-size: 1.5rem; 
 }
 
 p {
     font-family: 'Inter', sans-serif;
+    text-transform: lowercase;
 }
 
 a {
     text-decoration: none;
     color: var(--text-color);
     transition: opacity 0.2s ease;
+    text-transform: lowercase;
 }
 
 a:hover {
@@ -61,19 +66,19 @@ nav {
 }
 
 .logo {
-    font-family: 'Bodoni Moda', serif; /* BODONI LOGO */
+    font-family: 'Bodoni Moda', serif; 
     font-weight: 600;
     font-size: 1.2rem; 
     letter-spacing: 0.05em;
-    text-transform: uppercase;
+    text-transform: lowercase; /* Lowercase Logo */
 }
 
 .nav-links a {
     margin-left: 30px;
     font-family: 'Inter', sans-serif; 
-    font-size: 0.75rem; 
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
+    font-size: 0.8rem; /* Slightly larger for lowercase legibility */
+    text-transform: lowercase;
+    letter-spacing: 0.1em;
     border-bottom: 1px solid transparent;
     padding-bottom: 2px;
 }
@@ -94,24 +99,25 @@ nav {
 
 /* The Frame around the content */
 .landing-content {
-    border: 1px solid #000; /* THE BLACK BORDER */
-    padding: 60px 80px;     /* Space inside the border */
-    max-width: 600px;       /* Keeps it elegant */
-    margin: 0 20px;         /* Prevents it touching edges on phones */
+    border: 1px solid #000;
+    padding: 60px 80px;    
+    max-width: 600px;       
+    margin: 0 20px;         
 }
 
 /* Name Title Styling */
 .landing-container h1 {
-    font-family: 'Bodoni Moda', serif; /* BODONI NAME */
+    font-family: 'Bodoni Moda', serif; 
     font-weight: 500; 
     font-size: 3.5rem; 
     margin-bottom: 10px;
     letter-spacing: 0.02em; 
     line-height: 1.1;
+    text-transform: lowercase; /* "shamanth sreekanth" */
 }
 
 .welcome-img {
-    width: 140px !important; /* Force Small Size */
+    width: 140px !important;
     height: auto !important;
     display: block !important;
     margin: 0 auto 40px !important; 
@@ -126,10 +132,10 @@ nav {
 
 .choice-btn {
     font-family: 'Inter', sans-serif; 
-    font-size: 0.8rem;
+    font-size: 0.9rem; /* Bumped up slightly */
     font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: 0.25em; 
+    text-transform: lowercase;
+    letter-spacing: 0.15em; 
     border-bottom: 1px solid transparent;
     padding-bottom: 5px;
 }
@@ -151,8 +157,8 @@ nav {
 .filter-btn {
     font-family: 'Inter', sans-serif;
     font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
+    text-transform: lowercase;
+    letter-spacing: 0.1em;
     cursor: pointer;
     color: var(--accent-color);
     border-bottom: 1px solid transparent;
@@ -197,24 +203,21 @@ nav {
 
 .section-header p {
     color: var(--accent-color);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     margin-top: 15px;
     letter-spacing: 0.05em;
+    text-transform: lowercase; /* Forces description lowercase */
 }
 
-/* --- THE MASONRY LAYOUT (Replaces the old Grid) --- */
+/* --- THE MASONRY LAYOUT --- */
 .photo-grid {
-    /* Use CSS columns to pack items tightly */
     column-count: 2;
-    column-gap: 40px; /* Space between columns */
+    column-gap: 40px; 
 }
 
-/* Target the container for each photo/caption pair */
 .photo-grid > div {
-    /* Prevent a photo block from being split across two columns */
     break-inside: avoid;
-    /* Add vertical space between items within a column */
-    margin-bottom: 60px; /* Tighter gap for a better look */
+    margin-bottom: 60px; 
 }
 
 .photo-grid img {
@@ -231,10 +234,10 @@ nav {
 .grid-caption {
     margin-top: 12px;
     font-family: 'Inter', sans-serif;
-    font-size: 0.65rem; 
+    font-size: 0.7rem; 
     color: var(--accent-color);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-transform: lowercase; /* Lowercase Captions */
 }
 
 /* RESPONSIVE */
@@ -245,12 +248,11 @@ nav {
         padding: 40px 20px;
     }
 
-    /* Switch to 1 column on mobile */
     .photo-grid { 
         column-count: 1;
     }
     
     .split-choice { gap: 40px; flex-direction: column; }
     .sub-nav-container { gap: 25px; }
-    .filter-btn { font-size: 0.7rem; }
+    .filter-btn { font-size: 0.8rem; }
 }
